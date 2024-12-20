@@ -5,15 +5,15 @@
     *内核将打印信息存文件
 ##   hash_map
     *内核和用户态的hash表使用
-##   kernel——udp——construct
+##   kernel_udp_construct
     *内核的udp报文构造，可参考构造icmp，arp，tcp
 ##   ko模块互相调用
     *export——symbol和函数注册与回调使用
-##   ksocket——udp——tcp
+##   ksocket_udp_tcp
     *内核ksocket，可与用户、内核socket建立通信
-##   rtt——used
+##   rtt_used
     *python分析wireshark抓包的rtt
-##   skb——printk
+##   skb_printk
     *内核skb的规则化打印
 ##   用户态的ping
     *用户态构造icmp报文测量网络往返时延rtt
