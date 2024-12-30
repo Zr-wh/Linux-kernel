@@ -43,8 +43,20 @@ int udp_cli(void *arg)
 	memset(&addr_srv, 0, sizeof(addr_srv));
 	addr_srv.sin_family = AF_INET;
 	addr_srv.sin_port = htons(4444);
-	addr_srv.sin_addr.s_addr = inet_addr("127.0.0.1");;
+	addr_srv.sin_addr.s_addr = inet_addr("127.0.0.1");
+	// addr_srv.sin_addr.s_addr = inet_addr("127.0.0.125");//udp广播socket
 	addr_len = sizeof(struct sockaddr_in);
+
+
+	//udp广播socket配置
+	//unsigned int one = 1;
+	//sockptr_t sockptr;
+	//sockptr.is_kernel = 1;
+	//sockptr.kernel = &one;
+	//if(ksetsockopt(sock_cli,SOL_SOCKET,SO_BROADCAST,sockptr,sizeof(one))!=0)
+	//{
+	//	printk("udp broadcast socket failed);
+	//}
 	
 	sockfd_cli = ksocket(AF_INET, SOCK_DGRAM, 0);
 	printk("sockfd_cli = 0x%p\n", sockfd_cli);
